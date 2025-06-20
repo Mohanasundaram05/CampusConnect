@@ -20,6 +20,7 @@ import {
 interface SidebarProps {
   isOpen: boolean
   onClose: () => void
+  variant?: 'persistent' | 'drawer'
 }
 
 const sidebarItems = [
@@ -33,44 +34,100 @@ const sidebarItems = [
   { href: "/about", label: "About Us", icon: Info },
 ]
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export default function Sidebar({ isOpen, onClose, variant = 'drawer' }: SidebarProps) {
   const pathname = usePathname()
 
-  // Handle escape key press
+  // Only handle escape/click outside for drawer variant
   useEffect(() => {
+    if (variant !== 'drawer') return;
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose()
       }
     }
-
     if (isOpen) {
       document.addEventListener("keydown", handleEscape)
     }
-
     return () => {
       document.removeEventListener("keydown", handleEscape)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, onClose, variant])
 
-  // Handle click outside
   useEffect(() => {
+    if (variant !== 'drawer') return;
     const handleClickOutside = (e: MouseEvent) => {
       const sidebar = document.getElementById("sidebar")
       if (sidebar && !sidebar.contains(e.target as Node)) {
         onClose()
       }
     }
-
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, onClose, variant])
 
+  // Persistent sidebar (desktop)
+  if (variant === 'persistent') {
+    return (
+      <aside
+        id="sidebar"
+        role="navigation"
+        aria-label="Main navigation"
+        className="h-full w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 z-40 flex flex-col"
+      >
+        <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-gray-700">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Navigation</h2>
+        </div>
+        <nav className="flex flex-col h-[calc(100vh-4rem)]">
+          <div className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+            {sidebarItems.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <Link 
+                  key={item.href} 
+                  href={item.href} 
+                  className="block"
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <div
+                    className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                      isActive
+                        ? "bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300"
+                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                    }`}
+                  >
+                    <item.icon className="mr-3 h-5 w-5" />
+                    {item.label}
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          <div className="p-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
+            <hr className="my-4 border-gray-200 dark:border-gray-700" />
+            <Button
+              asChild
+              variant="outline"
+              className="w-full justify-center"
+            >
+              <Link href="/auth/login">Login</Link>
+            </Button>
+            <Button
+              asChild
+              className="w-full justify-center bg-[#007BFF] hover:bg-[#0056b3]"
+            >
+              <Link href="/signup">Get Started</Link>
+            </Button>
+          </div>
+        </nav>
+      </aside>
+    )
+  }
+
+  // Drawer sidebar (mobile)
   return (
     <AnimatePresence>
       {isOpen && (
@@ -80,10 +137,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden md:block"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
             onClick={onClose}
           />
-
           {/* Sidebar */}
           <motion.aside
             id="sidebar"
@@ -93,7 +149,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             animate={{ x: isOpen ? 0 : "-100%" }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 20 }}
-            className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 z-50 ${isOpen ? 'block' : 'hidden'} md:${isOpen ? 'block' : 'hidden'}`}
+            className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 z-50 ${isOpen ? 'block' : 'hidden'} md:hidden`}
           >
             <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-gray-700">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Navigation</h2>
@@ -107,7 +163,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-
             <nav className="flex flex-col h-[calc(100vh-4rem)]">
               <div className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
                 {sidebarItems.map((item) => {
@@ -136,7 +191,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   )
                 })}
               </div>
-
               <div className="p-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
                 <hr className="my-4 border-gray-200 dark:border-gray-700" />
                 <Button
