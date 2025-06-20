@@ -4,7 +4,12 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+} from "@/components/ui/select"
 import { Menu, Globe, Sun, Moon } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { useTheme } from "@/contexts/theme-context"
@@ -29,10 +34,24 @@ export default function Navbar() {
       <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Left section: Logo and Hamburger Menu (Desktop only) */}
             <div className="flex items-center">
+              {/* Hamburger Menu for mobile */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsSidebarOpen(true)}
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </div>
+
               {/* Logo */}
-              <Link href="/" className="flex items-center space-x-2 ml-4 lg:ml-0">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 ml-4 lg:ml-0"
+              >
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">CC</span>
                 </div>
@@ -45,7 +64,7 @@ export default function Navbar() {
             {/* Center section: Desktop Navigation */}
             <div className="hidden md:flex flex-1 justify-center">
               <div className="flex items-center space-x-8">
-                {navItems.map((item) => (
+                {navItems.map(item => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -58,10 +77,13 @@ export default function Navbar() {
             </div>
 
             {/* Right section: Controls and Auth Buttons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Language Selector */}
-              <Select value={language} onValueChange={(value) => setLanguage(value as any)}>
-                <SelectTrigger className="w-20 h-8 border-0 bg-transparent">
+              <Select
+                value={language}
+                onValueChange={value => setLanguage(value as any)}
+              >
+                <SelectTrigger className="w-auto h-8 border-0 bg-transparent">
                   <Globe className="h-4 w-4" />
                 </SelectTrigger>
                 <SelectContent>
@@ -72,15 +94,26 @@ export default function Navbar() {
               </Select>
 
               {/* Theme Toggle */}
-              <Button variant="ghost" size="sm" onClick={toggleTheme} className="w-8 h-8 p-0">
-                {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleTheme}
+                className="w-8 h-8 p-0"
+              >
+                {theme === "light" ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
               </Button>
 
               {/* Auth Buttons */}
-              <div className="flex items-center space-x-2">
+              <div className="hidden sm:flex items-center space-x-2">
                 {isAuthenticated ? (
                   <div className="flex items-center space-x-3">
-                    <span className="text-sm text-gray-600 dark:text-gray-300 hidden md:block">Welcome, {user?.firstName}</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 hidden md:block">
+                      Welcome, {user?.firstName}
+                    </span>
                     <Button variant="ghost" size="sm" onClick={logout}>
                       Logout
                     </Button>
