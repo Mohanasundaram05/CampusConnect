@@ -36,7 +36,7 @@ export default function Navbar() {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">CC</span>
                 </div>
-                <span className="hidden sm:inline text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   CampusConnect
                 </span>
               </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <>
-                    <Button asChild variant="ghost" size="sm" className="hidden sm:flex">
+                    <Button asChild variant="ghost" size="sm">
                       <Link href="/auth/login">{t("nav.login")}</Link>
                     </Button>
                     <Button

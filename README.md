@@ -1,5 +1,7 @@
 # CampusConnect
 
+![CampusConnect Logo](public/placeholder-logo.png)
+
 CampusConnect is an AI-powered platform designed to help students find their ideal college and course matches. It leverages advanced recommendation algorithms, real-time cutoff predictions, and a user-friendly interface to simplify the college admissions process.
 
 ## Features
@@ -73,5 +75,4 @@ CampusConnect uses a modern, accessible color palette with support for light and
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-
-This project is licensed under the MIT License – see the [MIT](LICENSE) file for details
+[MIT](LICENSE) 
