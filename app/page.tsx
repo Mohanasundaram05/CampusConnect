@@ -110,7 +110,7 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-[url('/bg.jpg?height=1080&width=1920')] bg-cover bg-center opacity-20" />
 
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center text-white px-4 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="w-full px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function HomePage() {
 
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="w-full px-4">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -238,7 +238,7 @@ export default function HomePage() {
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="w-full px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -297,7 +297,7 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="w-full px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -371,7 +371,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-sky-400 via-white to-blue-600">
-        <div className="max-w-4xl mx-auto text-center px-4">
+        <div className="w-full text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
