@@ -80,7 +80,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden md:block"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
             onClick={onClose}
           />
 
@@ -93,7 +93,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             animate={{ x: isOpen ? 0 : "-100%" }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 20 }}
-            className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 z-50 ${isOpen ? 'block' : 'hidden'} md:${isOpen ? 'block' : 'hidden'}`}
+            className="fixed top-0 left-0 h-full w-[280px] sm:w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 z-50 overflow-y-auto"
           >
             <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 dark:border-gray-700">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Navigation</h2>
@@ -159,4 +159,4 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       )}
     </AnimatePresence>
   )
-} 
+}
