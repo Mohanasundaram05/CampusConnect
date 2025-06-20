@@ -1,7 +1,5 @@
 # CampusConnect
 
-![CampusConnect Logo](public/placeholder-logo.png)
-
 CampusConnect is an AI-powered platform designed to help students find their ideal college and course matches. It leverages advanced recommendation algorithms, real-time cutoff predictions, and a user-friendly interface to simplify the college admissions process.
 
 ## Features
