@@ -144,7 +144,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   variant="outline"
                   className="w-full justify-center"
                 >
-                  <Link href="/login">Login</Link>
+                  <Link href="/auth/login">Login</Link>
                 </Button>
                 <Button
                   asChild
