@@ -110,16 +110,16 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-[url('/bg.jpg?height=1080&width=1920')] bg-cover bg-center opacity-20" />
 
-        <div className="relative z-10 text-center text-white px-4 w-full">
+        <div className="relative z-10 text-center text-white w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-black to-black bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-black to-black bg-clip-text text-transparent">
               {t("hero.title")}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 w-full">
               {t("hero.subtitle")}
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -151,17 +151,17 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="w-full px-4">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {t("features.title")}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 w-full">
               {t("features.subtitle")}
             </p>
           </motion.div>
@@ -184,7 +184,7 @@ export default function HomePage() {
                     >
                       <feature.icon className="h-8 w-8 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
@@ -199,8 +199,8 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="w-full px-4">
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="w-full">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -214,14 +214,13 @@ export default function HomePage() {
                 variants={fadeInUp}
                 className="text-center text-white"
               >
-                <motion.div
-                  className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center"
+                <motion.div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center"
                   whileHover={{ scale: 1.1 }}
                 >
                   <stat.icon className="h-8 w-8" />
                 </motion.div>
                 <motion.div
-                  className="text-4xl font-bold mb-2"
+                  className="text-4xl font-bold"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -237,8 +236,8 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="w-full px-4">
+      <section className="bg-white dark:bg-gray-900">
+        <div className="w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -246,10 +245,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {t("why_us.title")}
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 {t("why_us.subtitle")}
               </p>
               <div className="space-y-6">
@@ -296,8 +295,8 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
-        <div className="w-full px-4">
+      <section className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +313,7 @@ export default function HomePage() {
 
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={30}
+            spaceBetween={0}
             slidesPerView={1}
             breakpoints={{
               640: { slidesPerView: 2 },
@@ -328,13 +327,13 @@ export default function HomePage() {
               clickable: true,
               dynamicBullets: true,
             }}
-            className="pb-12"
+            className=""
             loop={true}
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <Card className="h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg">
-                  <CardContent className="p-8">
+                  <CardContent>
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star
@@ -370,18 +369,18 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-sky-400 via-white to-blue-600">
-        <div className="w-full text-center px-4">
+      <section className="bg-gradient-to-r from-sky-400 via-white to-blue-600">
+        <div className="w-full text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-black">
               {t("cta.title")}
             </h2>
-            <p className="text-xl text-gray-500 mb-8">{t("cta.subtitle")}</p>
+            <p className="text-xl text-gray-500">{t("cta.subtitle")}</p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
