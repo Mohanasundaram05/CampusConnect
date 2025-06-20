@@ -14,7 +14,7 @@ export default function FloatingMenuButton({ onOpenSidebar }: FloatingMenuButton
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="fixed bottom-4 left-4 z-50"
+      className="fixed bottom-4 left-4 z-50 md:hidden"
     >
       <Button 
         variant="default" 
