@@ -17,23 +17,18 @@ import {
   Info 
 } from "lucide-react"
 
+interface NavItem {
+  href: string;
+  label: string;
+}
+
 interface SidebarProps {
   isOpen: boolean
   onClose: () => void
+  navItems: NavItem[]
 }
 
-const sidebarItems = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/profile", label: "Profile", icon: User },
-  { href: "/recommendations", label: "Recommendations", icon: Sparkles },
-  { href: "/cutoff-trends", label: "Cutoff Trends", icon: TrendingUp },
-  { href: "/courses", label: "Course Explorer", icon: Search },
-  { href: "/comparison", label: "Compare Colleges", icon: Link2 },
-  { href: "/chatbot", label: "AI Chatbot", icon: MessageCircle },
-  { href: "/about", label: "About Us", icon: Info },
-]
-
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export default function Sidebar({ isOpen, onClose, navItems }: SidebarProps) {
   const pathname = usePathname()
 
   // Handle escape key press
@@ -110,7 +105,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
             <nav className="flex flex-col h-[calc(100vh-4rem)]">
               <div className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
-                {sidebarItems.map((item) => {
+                {navItems.map((item) => {
                   const isActive = pathname === item.href
                   return (
                     <Link 
@@ -129,29 +124,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50"
                         }`}
                       >
-                        <item.icon className="mr-3 h-5 w-5" />
                         {item.label}
                       </motion.div>
                     </Link>
                   )
                 })}
-              </div>
-
-              <div className="p-4 border-t border-gray-200 dark:border-gray-700 space-y-3">
-                <hr className="my-4 border-gray-200 dark:border-gray-700" />
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full justify-center"
-                >
-                  <Link href="/login">Login</Link>
-                </Button>
-                <Button
-                  asChild
-                  className="w-full justify-center bg-[#007BFF] hover:bg-[#0056b3]"
-                >
-                  <Link href="/signup">Get Started</Link>
-                </Button>
               </div>
             </nav>
           </motion.aside>
