@@ -19,13 +19,20 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         <AuthProvider>
           <div className="min-h-screen flex flex-col">
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <div className="flex flex-1">
+              {/* Persistent sidebar on desktop */}
+              <aside className="hidden md:block w-64 h-[calc(100vh-4rem)] sticky top-16 z-40">
+                <Sidebar isOpen={true} onClose={() => {}} />
+              </aside>
+              {/* Main content */}
+              <main className="flex-1 md:ml-0">{children}</main>
+            </div>
             <Footer />
+            {/* Sidebar drawer for mobile */}
+            <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+            {/* Floating Menu Button for mobile */}
+            <FloatingMenuButton onOpenSidebar={() => setIsSidebarOpen(true)} />
           </div>
-          {/* Sidebar */}
-          <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-          {/* Floating Menu Button */}
-          <FloatingMenuButton onOpenSidebar={() => setIsSidebarOpen(true)} />
         </AuthProvider>
       </LanguageProvider>
     </ThemeProvider>
