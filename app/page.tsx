@@ -116,16 +116,16 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-black to-black bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-black to-black bg-clip-text text-transparent">
               {t("hero.title")}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto">
               {t("hero.subtitle")}
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                className="bg-white text-purple-600 hover:bg-blue-50 text-lg px-8 py-4 rounded-full shadow-2xl"
+                className="bg-white text-purple-600 hover:bg-blue-50 text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full shadow-2xl"
                 asChild
               >
                 <Link href="/profile">
