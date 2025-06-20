@@ -75,4 +75,4 @@ CampusConnect uses a modern, accessible color palette with support for light and
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-[MIT](LICENSE) 
+This project is licensed under the MIT License – see the [MIT](LICENSE) file for details.
