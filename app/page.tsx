@@ -108,7 +108,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-400 via-white to-blue-600 opacity-90" />
 
-        <div className="absolute inset-0 bg-[url('/bg.jpg?height=1080&width=1920')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-[url('/bg.jpg')] h-90 bg-cover bg-center opacity-20" />
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <motion.div

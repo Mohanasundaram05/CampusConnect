@@ -35,7 +35,7 @@ const team = [
   },
   {
     name: "ARUN KUMAR",
-    role: "Lead Designer",
+    role: "Lead Design er",
     image: "/tm4.png?height=200&width=200",
     bio: "UX designer passionate about accessible education",
     email: "arun@campusconnect.com",
