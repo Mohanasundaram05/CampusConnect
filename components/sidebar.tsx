@@ -28,7 +28,7 @@ interface SidebarProps {
   navItems: NavItem[]
 }
 
-export default function Sidebar({ isOpen, onClose, navItems }: SidebarProps) {
+export default function Sidebar({ isOpen, onClose, navItems = [] }: SidebarProps) {
   const pathname = usePathname()
 
   // Handle escape key press
