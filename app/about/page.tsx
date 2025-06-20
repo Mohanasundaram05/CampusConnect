@@ -7,7 +7,7 @@ import { useLanguage } from "@/contexts/language-context";
 
 const team = [
   {
-    name: "MOHANASUNDARAM ",
+    name: "MOHANASUNDARAM",
     role: "Founder & CEO",
     image: "/tm1.png?height=200&width=200",
     bio: "Former IIT professor with 15+ years in education technology",
@@ -16,7 +16,7 @@ const team = [
     github: "#",
   },
   {
-    name: "RAJESH KUMAR ",
+    name: "RAJESH KUMAR",
     role: "Co-Founder",
     image: "/tm2.png?height=200&width=200",
     bio: "AI/ML expert with experience at top tech companies",
