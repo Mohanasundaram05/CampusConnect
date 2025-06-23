@@ -73,10 +73,10 @@ export default function Navbar() {
                     <Globe className="h-4 w-4" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="en">EN</SelectItem>
-                    <SelectItem value="ta">TA</SelectItem>
-                    <SelectItem value="hi">HI</SelectItem>
-                    <SelectItem value="ml">ML</SelectItem>
+                    <SelectItem value="en">ENG</SelectItem>
+                    <SelectItem value="ta">TAM</SelectItem>
+                    <SelectItem value="ml">MAL</SelectItem>
+                    <SelectItem value="hi">HIN</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
