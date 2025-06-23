@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-type Language = "en" | "ta" | "hi";
+type Language = "en" | "ta" | "ml" |"hi";
 
 interface LanguageContextType {
   language: Language;
@@ -159,6 +159,82 @@ const translations = {
     // Comparison
     "comparison.title": "கல்லூரி ஒப்பீடு",
   },
+
+  ml: {
+  // Navigation
+  "nav.home": "ഹോം",
+  "nav.features": "സവിശേഷതകൾ",
+  "nav.explore": "ആവശ്യാനുസരണം പരിശോധിക്കുക",
+  "nav.login": "ലോഗിൻ",
+  "nav.signup": "സൈൻ അപ്പ്",
+
+  // Hero Section
+  "hero.title": "നിങ്ങളുടെ അനുയോജ്യമായ എഞ്ചിനീയറിംഗ് കോളേജ് കണ്ടെത്തൂ",
+  "hero.subtitle":
+    "ബുദ്ധിപൂർണമായ ശുപാർശാ സംവിധാനത്തോടെ എഞ്ചിനീയറിംഗ് പ്രവേശനത്തെക്കുറിച്ച് ധാരണാപൂർണ്ണമായ തീരുമാനം എടുക്കൂ",
+  "hero.cta": "ആരംഭിക്കുക",
+
+  // Features
+  "features.title": "എന്തുകൊണ്ട് CampusConnect തിരഞ്ഞെടുക്കണം?",
+  "features.subtitle":
+    "നിങ്ങളുടെ എഞ്ചിനീയറിംഗ് വിദ്യാഭ്യാസത്തിനായുള്ള മനോഹരമായ തീരുമാനങ്ങൾ എടുക്കാൻ സമഗ്രമായ ഉപകരണങ്ങളും洞ങ്ങളുമൊത്ത്",
+  "features.ai_recommendations": "AI ശുപാർശകൾ",
+  "features.ai_recommendations_desc":
+    "നിങ്ങളുടെ അക്കാദമിക് പ്രൊഫൈലും താൽപര്യങ്ങളും അടിസ്ഥാനമാക്കി വ്യക്തിഗത കോളേജ് ശുപാർശകൾ ലഭിക്കുക",
+  "features.cutoff_predictions": "കട്ടോഫ് പ്രവചനങ്ങൾ",
+  "features.cutoff_predictions_desc":
+    "ചരിത്ര വിവരങ്ങളും മെഷീൻ ലേണിങ്ങും ഉപയോഗിച്ച് കൃത്യമായ കട്ടോഫ് പ്രവചനം",
+  "features.chatbot_support": "24/7 AI പിന്തുണ",
+  "features.chatbot_support_desc":
+    "പ്രവേശനത്തെക്കുറിച്ചുള്ള നിങ്ങളുടെ സംശയങ്ങൾക്ക് എപ്പോഴും ഉടൻ മറുപടി ലഭിക്കുക",
+  "features.multi_language": "മൾട്ടി-ലാംഗ്വേജ്",
+  "features.multi_language_desc":
+    "ഇംഗ്ലീഷ്, തമിഴ്, ഹിന്ദി ഭാഷകളിൽ പ്ലാറ്റ്‌ഫോം ഉപയോഗിക്കാൻ കഴിയും",
+
+  // Stats
+  "stats.students_helped": "സഹായം ലഭിച്ച വിദ്യാർത്ഥികൾ",
+  "stats.colleges_listed": "ലിസ്റ്റുചെയ്ത കോളേജുകൾ",
+  "stats.accuracy_rate": "കൃത്യതാ നിരക്ക്",
+  "stats.user_rating": "ഉപയോക്തൃ റേറ്റിംഗ്",
+
+  // Why Us
+  "why_us.title": "CampusConnect-നെ വിദ്യാർത്ഥികൾ വിശ്വസിക്കുന്നതിന് കാരണം",
+  "why_us.subtitle":
+    "അത്യാധുനിക AI സാങ്കേതികവിദ്യയും ഗഹനമായ വിദ്യാഭ്യാസ洞ങ്ങളുമാണ് ഞങ്ങളുടെ ശക്തി",
+  "why_us.point1":
+    "വ്യക്തിഗത ശുപാർശകൾ നൽകാൻ ആയിരക്കണക്കിന് ഡാറ്റ പോയിന്റുകൾ വിശകലനം ചെയ്യുന്ന ആധുനിക AI അൽഗോരിതങ്ങൾ",
+  "why_us.point2":
+    "ചരിത്ര ഡാറ്റയും നിലവിലെ ട്രെൻഡുകളും അടിസ്ഥാനമാക്കിയുള്ള തത്സമയ കട്ടോഫ് പ്രവചനങ്ങൾ",
+  "why_us.point3":
+    "വിശദമായ വിവരങ്ങളോടെ 500+ എഞ്ചിനീയറിംഗ് കോളേജുകളുടെ സമഗ്ര ഡാറ്റാബേസ്",
+
+  // Testimonials
+  "testimonials.title": "വിദ്യാർത്ഥികളുടെ അഭിപ്രായങ്ങൾ",
+  "testimonials.subtitle":
+    "CampusConnect ഉപയോഗിച്ച് അനുയോജ്യമായ കോളേജ് കണ്ടെത്തിയ ആയിരക്കണക്കിന് വിദ്യാർത്ഥികളിൽ പങ്കെടുക്കൂ",
+
+  // CTA
+  "cta.title": "നിങ്ങളുടെ അനുയോജ്യമായ കോളേജ് കണ്ടെത്താൻ തയാറായോ?",
+  "cta.subtitle":
+    "AI ശക്തിയുള്ള ഞങ്ങളുടെ പ്ലാറ്റ്‌ഫോമിന്റെ സഹായത്തോടെ വിജയം കണ്ട ആയിരക്കണക്കിന് വിദ്യാർത്ഥികൾക്ക് ചേരൂ",
+  "cta.button": "നിങ്ങളുടെ യാത്ര ആരംഭിക്കുക",
+
+  // Profile Page
+  "profile.title": "നിങ്ങളുടെ പ്രൊഫൈൽ സൃഷ്ടിക്കുക",
+
+  // Recommendations
+  "recommendations.title": "നിങ്ങളുടെ കോളേജ് ശുപാർശകൾ",
+
+  // Cutoff Trends
+  "cutoff_trends.title": "കട്ടോഫ് ട്രെൻഡുകളും വിശകലനവും",
+
+  // Courses
+  "courses.title": "എഞ്ചിനീയറിംഗ് കോഴ്സുകൾ പരിശോധിക്കുക",
+
+  // Comparison
+  "comparison.title": "കോളേജ് താരതമ്യം",
+},
+
   hi: {
     // Navigation
     "nav.home": "होम",

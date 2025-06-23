@@ -76,6 +76,7 @@ export default function Navbar() {
                     <SelectItem value="en">EN</SelectItem>
                     <SelectItem value="ta">TA</SelectItem>
                     <SelectItem value="hi">HI</SelectItem>
+                    <SelectItem value="ml">ML</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
