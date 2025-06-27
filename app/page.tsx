@@ -162,7 +162,7 @@ export default function HomePage() {
               {t("features.title")}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              {t(" features.subtitle")}
+              {t("features.subtitle")}
             </p>
           </motion.div>
 
