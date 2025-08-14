@@ -35,7 +35,7 @@ const team = [
   },
   {
     name: "ARUN KUMAR",
-    role: "Lead Design er",
+    role: "Lead Designer",
     image: "/tm4.png?height=200&width=200",
     bio: "UX designer passionate about accessible education",
     email: "arun@campusconnect.com",
@@ -51,8 +51,17 @@ const team = [
     linkedin: "#",
     github: "#",
   },
+  {
+    name: "SATHYA ",
+    role: "CFO",
+    image: "/tm6.png?height=200&width=200",
+    bio: "Finance leader enabling scalable and inclusive EdTech innovation.",
+    email: "Sathyaa@campusconnect.com",
+    linkedin: "#",
+    github: "#",
+  },
 ];  
-
+k
 const values = [
   {
     icon: Target,
