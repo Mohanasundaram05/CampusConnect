@@ -95,9 +95,6 @@ const initialFormData = {
   totalMarks: "",
   percentage: "",
   category: "",
-  jeeMainRank: "",
-  jeeAdvancedRank: "",
-  stateRank: "",
   otherExams: [],
 
   // Preferences
@@ -1306,10 +1303,9 @@ export default function ProfilePage() {
                   </div>
                 )}
 
-                {/* Step 4: Career Goals */}
                 {currentStep === 4 && (
                   <div className="space-y-6">
-                    {/* Interested Courses */}
+                    
                     <div>
                       <Label className="flex items-center gap-2 mb-4">
                         <BookOpen className="h-4 w-4" />

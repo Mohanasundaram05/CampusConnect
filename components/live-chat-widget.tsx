@@ -89,7 +89,7 @@ export default function LiveChatWidget() {
     }
 
     if (lowerText.includes("scholarship")) {
-      return "We offer Merit Scholarships (₹50,000/year), Need-based Aid (₹75,000/year), and Sports Scholarships (₹40,000/year). You can check your eligibility using our scholarship calculator."
+      return "We offer Merit Scholarships (₹50,000/ye ar), Need-based Aid (₹75,000/year), and Sports Scholarships (₹40,000/year). You can check your eligibility using our scholarship calculator."
     }
 
     if (lowerText.includes("placement")) {
