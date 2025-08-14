@@ -61,7 +61,6 @@ const team = [
     github: "#",
   },
 ];  
-k
 const values = [
   {
     icon: Target,
