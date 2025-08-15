@@ -40,7 +40,7 @@ const translations = {
       "Get instant answers to your admission queries anytime, anywhere",
     "features.multi_language": "Multi-Language",
     "features.multi_language_desc":
-      "Access our platform in English, Tamil, and Hindi for better understanding",
+      "Access our platform in English, Tamil, Malayalam and Hindi for better understanding",
 
     // Stats
     "stats.students_helped": "Students Helped",

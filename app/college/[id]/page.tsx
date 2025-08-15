@@ -56,7 +56,6 @@ import AdmissionCalculator from "@/components/admission-calculator";
 import LiveChatWidget from "@/components/live-chat-widget";
 import VirtualTour from "@/components/virtual-tour";
 
-// Mock college data - in real app, this would come from API
 const collegeData = {
   1: {
     id: 1,
