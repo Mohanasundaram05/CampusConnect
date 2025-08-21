@@ -139,12 +139,12 @@ export default function HomePage() {
         {/* Floating Elements */}
         <motion.div
           className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full"
-          animate={{ y: [0, -20, 0] }}
+          animate={{ y: [0, -30, 0] }}
           transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
         />
         <motion.div
           className="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full"
-          animate={{ y: [0, 20, 0] }}
+          animate={{ y: [0, 30, 0] }}
           transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
         />
       </section>

@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description: "Connect with your campus community",
 };
 
-// The layout content that requires client-side features will be moved to a separate file
 export default function RootLayout({
   children,
 }: {
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {/* Wrap the children with the client component */}
+       
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>

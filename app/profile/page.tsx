@@ -225,22 +225,7 @@ export default function ProfilePage() {
     "Startups",
     "Government",
   ];
-
-  const skills = [
-    "Programming",
-    "Problem Solving",
-    "Communication",
-    "Leadership",
-    "Teamwork",
-    "Project Management",
-    "Research",
-    "Innovation",
-    "Critical Thinking",
-    "Creativity",
-    "Time Management",
-    "Adaptability",
-  ];
-
+  
   const extracurriculars = [
     "Sports",
     "Music",
@@ -1033,6 +1018,7 @@ export default function ProfilePage() {
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="general">General</SelectItem>
+                            <SelectItem value="mbc">MBC (Most Backward class)</SelectItem>
                             <SelectItem value="obc">
                               OBC (Other Backward Class)
                             </SelectItem>
@@ -1186,120 +1172,6 @@ export default function ProfilePage() {
                         </p>
                       )}
                     </div>
-
-                    {/* Budget Range */}
-                    <div>
-                      <Label className="flex items-center gap-2 mb-4">
-                        <DollarSign className="h-4 w-4" />
-                        Annual Budget Range (in Lakhs)
-                      </Label>
-                      <div className="px-4">
-                        <Slider
-                          value={formData.budgetRange}
-                          onValueChange={(value) =>
-                            handleInputChange("budgetRange", value)
-                          }
-                          max={25}
-                          min={0}
-                          step={1}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-gray-500 mt-2">
-                          <span>₹0 Lakhs</span>
-                          <span className="font-medium">
-                            ₹{formData.budgetRange[0]} Lakhs
-                          </span>
-                          <span>₹25+ Lakhs</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Accommodation */}
-                    <div>
-                      <Label>Accommodation Preference *</Label>
-                      <RadioGroup
-                        value={formData.accommodationType}
-                        onValueChange={(value) =>
-                          handleInputChange("accommodationType", value)
-                        }
-                        className="grid md:grid-cols-3 gap-4 mt-3"
-                      >
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="hostel" id="hostel" />
-                          <Label htmlFor="hostel">Hostel</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem
-                            value="day-scholar"
-                            id="day-scholar"
-                          />
-                          <Label htmlFor="day-scholar">Day Scholar</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="flexible" id="flexible" />
-                          <Label htmlFor="flexible">Flexible</Label>
-                        </div>
-                      </RadioGroup>
-                      {errors.accommodationType && (
-                        <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
-                          <AlertCircle className="h-3 w-3" />
-                          {errors.accommodationType}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Distance from Home */}
-                    <div>
-                      <Label className="mb-4 block">
-                        Maximum Distance from Home (in KM)
-                      </Label>
-                      <div className="px-4">
-                        <Slider
-                          value={formData.distanceFromHome}
-                          onValueChange={(value) =>
-                            handleInputChange("distanceFromHome", value)
-                          }
-                          max={2000}
-                          min={0}
-                          step={50}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-gray-500 mt-2">
-                          <span>0 KM</span>
-                          <span className="font-medium">
-                            {formData.distanceFromHome[0] === 2000
-                              ? "Any Distance"
-                              : `${formData.distanceFromHome[0]} KM`}
-                          </span>
-                          <span>2000+ KM</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Campus Size */}
-                    <div>
-                      <Label>Campus Size Preference</Label>
-                      <RadioGroup
-                        value={formData.campusSize}
-                        onValueChange={(value) =>
-                          handleInputChange("campusSize", value)
-                        }
-                        className="grid md:grid-cols-3 gap-4 mt-3"
-                      >
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="small" id="small" />
-                          <Label htmlFor="small">Small & Intimate</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="medium" id="medium" />
-                          <Label htmlFor="medium">Medium Size</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="large" id="large" />
-                          <Label htmlFor="large">Large Campus</Label>
-                        </div>
-                      </RadioGroup>
-                    </div>
                   </div>
                 )}
 
@@ -1448,89 +1320,7 @@ export default function ProfilePage() {
                       )}
                     </div>
 
-                    {/* Salary Expectation */}
-                    <div>
-                      <Label className="flex items-center gap-2 mb-4">
-                        <DollarSign className="h-4 w-4" />
-                        Expected Starting Salary (in Lakhs per annum)
-                      </Label>
-                      <div className="px-4">
-                        <Slider
-                          value={formData.salaryExpectation}
-                          onValueChange={(value) =>
-                            handleInputChange("salaryExpectation", value)
-                          }
-                          max={50}
-                          min={3}
-                          step={1}
-                          className="w-full"
-                        />
-                        <div className="flex justify-between text-sm text-gray-500 mt-2">
-                          <span>₹3 LPA</span>
-                          <span className="font-medium">
-                            ₹{formData.salaryExpectation[0]} LPA
-                          </span>
-                          <span>₹50+ LPA</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Work Environment */}
-                    <div>
-                      <Label>Preferred Work Environment</Label>
-                      <RadioGroup
-                        value={formData.workEnvironment}
-                        onValueChange={(value) =>
-                          handleInputChange("workEnvironment", value)
-                        }
-                        className="grid md:grid-cols-3 gap-4 mt-3"
-                      >
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="corporate" id="corporate" />
-                          <Label htmlFor="corporate">Corporate</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="startup" id="startup" />
-                          <Label htmlFor="startup">Startup</Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="research" id="research" />
-                          <Label htmlFor="research">Research</Label>
-                        </div>
-                      </RadioGroup>
-                    </div>
-
-                    {/* Additional Skills */}
-                    <div>
-                      <Label className="mb-4 block">
-                        Additional Skills & Interests
-                      </Label>
-                      <div className="grid md:grid-cols-3 gap-3">
-                        {skills.map((skill) => (
-                          <div
-                            key={skill}
-                            className="flex items-center space-x-2"
-                          >
-                            <Checkbox
-                              id={skill}
-                              checked={formData.additionalSkills.includes(
-                                skill
-                              )}
-                              onCheckedChange={(checked) =>
-                                handleMultiSelect(
-                                  "additionalSkills",
-                                  skill,
-                                  checked
-                                )
-                              }
-                            />
-                            <Label htmlFor={skill} className="text-sm">
-                              {skill}
-                            </Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    
 
                     {/* Extracurricular Activities */}
                     <div>
