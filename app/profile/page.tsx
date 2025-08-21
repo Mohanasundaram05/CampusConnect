@@ -1018,7 +1018,9 @@ export default function ProfilePage() {
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="general">General</SelectItem>
-                            <SelectItem value="mbc">MBC (Most Backward class)</SelectItem>
+                            <SelectItem value="mbc">
+                              MBC (Most Backward class)
+                            </SelectItem>
                             <SelectItem value="obc">
                               OBC (Other Backward Class)
                             </SelectItem>
@@ -1172,12 +1174,63 @@ export default function ProfilePage() {
                         </p>
                       )}
                     </div>
+                    {/* Budget Range */}
+                    <div>
+                      <Label className="flex items-center gap-2 mb-4">
+                        <DollarSign className="h-4 w-4" />
+                        Annual Budget Range (in Lakhs)
+                      </Label>
+                      <div className="px-4">
+                        <Slider
+                          value={formData.budgetRange}
+                          onValueChange={(value) =>
+                            handleInputChange("budgetRange", value)
+                          }
+                          max={25}
+                          min={0}
+                          step={1}
+                          className="w-full"
+                        />
+                        <div className="flex justify-between text-sm text-gray-500 mt-2">
+                          <span>₹0 Lakhs</span>
+                          <span className="font-medium">
+                            ₹{formData.budgetRange[0]} Lakhs
+                          </span>
+                          <span>₹25+ Lakhs</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Campus Size */}
+                    <div>
+                      <Label>Campus Size Preference</Label>
+                      <RadioGroup
+                        value={formData.campusSize}
+                        onValueChange={(value) =>
+                          handleInputChange("campusSize", value)
+                        }
+                        className="grid md:grid-cols-3 gap-4 mt-3"
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="small" id="small" />
+                          <Label htmlFor="small">Compact Campus</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="medium" id="medium" />
+                          <Label htmlFor="medium">Mid-Sized Campus</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="large" id="large" />
+                          <Label htmlFor="large">Large Campus</Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
                   </div>
+                  
                 )}
 
                 {currentStep === 4 && (
                   <div className="space-y-6">
-                    
                     <div>
                       <Label className="flex items-center gap-2 mb-4">
                         <BookOpen className="h-4 w-4" />
@@ -1319,8 +1372,6 @@ export default function ProfilePage() {
                         </p>
                       )}
                     </div>
-
-                    
 
                     {/* Extracurricular Activities */}
                     <div>
