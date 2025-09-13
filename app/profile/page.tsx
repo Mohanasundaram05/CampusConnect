@@ -1024,7 +1024,7 @@ export default function ProfilePage() {
                             <SelectItem value="obc">
                               OBC (Other Backward Class)
                             </SelectItem>
-                            <SelectItem value="sc">
+                            <SelectItem value="sc">  
                               SC (Scheduled Caste)
                             </SelectItem>
                             <SelectItem value="st">
