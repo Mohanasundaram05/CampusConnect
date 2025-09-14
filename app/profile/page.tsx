@@ -225,7 +225,7 @@ export default function ProfilePage() {
     "Startups",
     "Government",
   ];
-  
+
   const extracurriculars = [
     "Sports",
     "Music",
@@ -1024,7 +1024,7 @@ export default function ProfilePage() {
                             <SelectItem value="obc">
                               OBC (Other Backward Class)
                             </SelectItem>
-                            <SelectItem value="sc">  
+                            <SelectItem value="sc">
                               SC (Scheduled Caste)
                             </SelectItem>
                             <SelectItem value="st">
@@ -1201,6 +1201,68 @@ export default function ProfilePage() {
                       </div>
                     </div>
 
+                    {/* Accommodation */}
+                    <div>
+                      <Label>Accommodation Preference *</Label>
+                      <RadioGroup
+                        value={formData.accommodationType}
+                        onValueChange={(value) =>
+                          handleInputChange("accommodationType", value)
+                        }
+                        className="grid md:grid-cols-3 gap-4 mt-3"
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="hostel" id="hostel" />
+                          <Label htmlFor="hostel">Hostel</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem
+                            value="day-scholar"
+                            id="day-scholar"
+                          />
+                          <Label htmlFor="day-scholar">Day Scholar</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="flexible" id="flexible" />
+                          <Label htmlFor="flexible">Flexible</Label>
+                        </div>
+                      </RadioGroup>
+                      {errors.accommodationType && (
+                        <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                          <AlertCircle className="h-3 w-3" />
+                          {errors.accommodationType}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Distance from Home */}
+                    <div>
+                      <Label className="mb-4 block">
+                        Maximum Distance from Home (in KM)
+                      </Label>
+                      <div className="px-4">
+                        <Slider
+                          value={formData.distanceFromHome}
+                          onValueChange={(value) =>
+                            handleInputChange("distanceFromHome", value)
+                          }
+                          max={2000}
+                          min={0}
+                          step={50}
+                          className="w-full"
+                        />
+                        <div className="flex justify-between text-sm text-gray-500 mt-2">
+                          <span>0 KM</span>
+                          <span className="font-medium">
+                            {formData.distanceFromHome[0] === 2000
+                              ? "Any Distance"
+                              : `${formData.distanceFromHome[0]} KM`}
+                          </span>
+                          <span>2000+ KM</span>
+                        </div>
+                      </div>
+                    </div>
+
                     {/* Campus Size */}
                     <div>
                       <Label>Campus Size Preference</Label>
@@ -1213,11 +1275,11 @@ export default function ProfilePage() {
                       >
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="small" id="small" />
-                          <Label htmlFor="small">Compact Campus</Label>
+                          <Label htmlFor="small">Small & Intimate</Label>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="medium" id="medium" />
-                          <Label htmlFor="medium">Mid-Sized Campus</Label>
+                          <Label htmlFor="medium">Medium Size</Label>
                         </div>
                         <div className="flex items-center space-x-2">
                           <RadioGroupItem value="large" id="large" />
@@ -1226,7 +1288,6 @@ export default function ProfilePage() {
                       </RadioGroup>
                     </div>
                   </div>
-                  
                 )}
 
                 {currentStep === 4 && (
